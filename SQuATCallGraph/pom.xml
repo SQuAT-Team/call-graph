@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <artifactId>callgraph</artifactId>
+
+    <name>Squat Call Graph Generator</name>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+
+        <!-- todo: as long as the fastpan project is not published, we use jitpack to serve the dependency -->
+        <dependency>
+            <groupId>com.github.DECLARE-Project</groupId>
+            <artifactId>fastpan</artifactId>
+            <version>v0.2.1</version>
+        </dependency>
+
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+            <version>4.0</version>
+        </dependency>
+    </dependencies>
+    <description>Generates Call Graphs for PCM Model Instances.</description>
+    <version>1.0.0</version>
+    <groupId>io.github.squat_team.callgraph</groupId>
+</project>

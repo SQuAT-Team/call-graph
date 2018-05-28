@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usagemodel:UsageModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:usagemodel="http://palladiosimulator.org/PalladioComponentModel/UsageModel/5.1">
+  <usageScenario_UsageModel id="_VgwxwHr3Eeek77WF10mCCg" entityName="defaultUsageScenario">
+    <scenarioBehaviour_UsageScenario id="_VgwxwXr3Eeek77WF10mCCg" entityName="defaultUsageScenarioBehaviour">
+      <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_pMMRkNqREee4ToXBRRujSw" entityName="ResetSale" successor="_fsG44tqFEee4ToXBRRujSw" predecessor="_mSjodNqFEee4ToXBRRujSw">
+        <providedRole_EntryLevelSystemCall href="cocome-cloud.system#_flXe0GhiEeeGEfrQKW056w"/>
+        <operationSignature__EntryLevelSystemCall href="cocome-cloud.repository#_uz4TMGVSEead_5QKkcGuDg"/>
+      </actions_ScenarioBehaviour>
+      <actions_ScenarioBehaviour xsi:type="usagemodel:Loop" id="_fsG44tqFEee4ToXBRRujSw" entityName="BarcodeScannedLoop" successor="_jMv-AtqZEee4ToXBRRujSw" predecessor="_pMMRkNqREee4ToXBRRujSw">
+        <loopIteration_Loop specification="IntPMF[(1; 0.03)(2; 0.05)(3; 0.08)(4; 0.1)(5; 0.13)(6; 0.16)(7; 0.17)(8; 0.14)(9; 0.09)(10; 0.05)]"/>
+        <bodyBehaviour_Loop id="_hNQikNqFEee4ToXBRRujSw">
+          <actions_ScenarioBehaviour xsi:type="usagemodel:Start" id="_Vgwxwnr3Eeek77WF10mCCg" successor="_aUHVQNksEee4ToXBRRujSw"/>
+          <actions_ScenarioBehaviour xsi:type="usagemodel:Stop" id="_Vgwxw3r3Eeek77WF10mCCg" predecessor="_aUHVQNksEee4ToXBRRujSw"/>
+          <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_aUHVQNksEee4ToXBRRujSw" entityName="scanProductBarcode" successor="_Vgwxw3r3Eeek77WF10mCCg" predecessor="_Vgwxwnr3Eeek77WF10mCCg">
+            <providedRole_EntryLevelSystemCall href="cocome-cloud.system#_flXe0GhiEeeGEfrQKW056w"/>
+            <operationSignature__EntryLevelSystemCall href="cocome-cloud.repository#_v97g8GVREead_5QKkcGuDg"/>
+          </actions_ScenarioBehaviour>
+        </bodyBehaviour_Loop>
+      </actions_ScenarioBehaviour>
+      <actions_ScenarioBehaviour xsi:type="usagemodel:Stop" id="_nR4-g9qFEee4ToXBRRujSw" predecessor="_fS0poNqaEee4ToXBRRujSw"/>
+      <actions_ScenarioBehaviour xsi:type="usagemodel:Start" id="_mSjodNqFEee4ToXBRRujSw" successor="_pMMRkNqREee4ToXBRRujSw"/>
+      <actions_ScenarioBehaviour xsi:type="usagemodel:Loop" id="_jMv-AtqZEee4ToXBRRujSw" entityName="BarcodeEnteredLoop" successor="_dpU8QNqaEee4ToXBRRujSw" predecessor="_fsG44tqFEee4ToXBRRujSw">
+        <loopIteration_Loop specification="IntPMF[(0; 0.7)(1; 0.2)(2; 0.1)]"/>
+        <bodyBehaviour_Loop id="_m9tHINqZEee4ToXBRRujSw">
+          <actions_ScenarioBehaviour xsi:type="usagemodel:Start" id="_uR01BNqZEee4ToXBRRujSw" successor="_vxc0sNqZEee4ToXBRRujSw"/>
+          <actions_ScenarioBehaviour xsi:type="usagemodel:Stop" id="_vR2Hk9qZEee4ToXBRRujSw" predecessor="_z-Bi0tqZEee4ToXBRRujSw"/>
+          <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_vxc0sNqZEee4ToXBRRujSw" entityName="clearBarcode" successor="_z-Bi0tqZEee4ToXBRRujSw" predecessor="_uR01BNqZEee4ToXBRRujSw">
+            <providedRole_EntryLevelSystemCall href="cocome-cloud.system#_flXe0GhiEeeGEfrQKW056w"/>
+            <operationSignature__EntryLevelSystemCall href="cocome-cloud.repository#_Mpwe4GXkEeamEr6y5T9PEQ"/>
+          </actions_ScenarioBehaviour>
+          <actions_ScenarioBehaviour xsi:type="usagemodel:Loop" id="_z-Bi0tqZEee4ToXBRRujSw" successor="_vR2Hk9qZEee4ToXBRRujSw" predecessor="_vxc0sNqZEee4ToXBRRujSw">
+            <loopIteration_Loop specification="8"/>
+            <bodyBehaviour_Loop id="_2Te-UNqZEee4ToXBRRujSw">
+              <actions_ScenarioBehaviour xsi:type="usagemodel:Start" id="_2payFNqZEee4ToXBRRujSw" successor="_4B7dINqZEee4ToXBRRujSw"/>
+              <actions_ScenarioBehaviour xsi:type="usagemodel:Stop" id="_3eDUA9qZEee4ToXBRRujSw" predecessor="_4B7dINqZEee4ToXBRRujSw"/>
+              <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_4B7dINqZEee4ToXBRRujSw" entityName="addDigitToBarcode" successor="_3eDUA9qZEee4ToXBRRujSw" predecessor="_2payFNqZEee4ToXBRRujSw">
+                <providedRole_EntryLevelSystemCall href="cocome-cloud.system#_flXe0GhiEeeGEfrQKW056w"/>
+                <operationSignature__EntryLevelSystemCall href="cocome-cloud.repository#_y7-SEGXjEeamEr6y5T9PEQ"/>
+              </actions_ScenarioBehaviour>
+            </bodyBehaviour_Loop>
+          </actions_ScenarioBehaviour>
+        </bodyBehaviour_Loop>
+      </actions_ScenarioBehaviour>
+      <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_dpU8QNqaEee4ToXBRRujSw" entityName="startCashPayment" successor="_fS0poNqaEee4ToXBRRujSw" predecessor="_jMv-AtqZEee4ToXBRRujSw">
+        <providedRole_EntryLevelSystemCall href="cocome-cloud.system#_flXe0GhiEeeGEfrQKW056w"/>
+        <operationSignature__EntryLevelSystemCall href="cocome-cloud.repository#_9Kj6UGVREead_5QKkcGuDg"/>
+      </actions_ScenarioBehaviour>
+      <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_fS0poNqaEee4ToXBRRujSw" entityName="enterCashAmount" successor="_nR4-g9qFEee4ToXBRRujSw" predecessor="_dpU8QNqaEee4ToXBRRujSw">
+        <providedRole_EntryLevelSystemCall href="cocome-cloud.system#_flXe0GhiEeeGEfrQKW056w"/>
+        <operationSignature__EntryLevelSystemCall href="cocome-cloud.repository#_v55SUGVNEead_5QKkcGuDg"/>
+      </actions_ScenarioBehaviour>
+    </scenarioBehaviour_UsageScenario>
+    <workload_UsageScenario xsi:type="usagemodel:OpenWorkload">
+      <interArrivalTime_OpenWorkload specification="Exp(1)"/>
+    </workload_UsageScenario>
+  </usageScenario_UsageModel>
+</usagemodel:UsageModel>
